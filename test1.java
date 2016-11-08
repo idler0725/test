@@ -5,7 +5,7 @@ package study;
  *
  */
 
-//計算クラス
+//CalculationClass
 class Calculation{
 	int[] sequence;		//元となる数列
 	//コンストラクタ
@@ -17,7 +17,7 @@ class Calculation{
 		}
 	}
 }
-//加算クラス
+//SumClass
 class Sum extends Calculation{
 	int sum = 0;		//和
 	//コンストラクタ
@@ -33,7 +33,7 @@ class Sum extends Calculation{
 		System.out.println("\b=" + sum);
 	}
 }
-//減算クラス
+//ReminderClass
 class Reminder extends Calculation{
 	int reminder;		//差
 	//コンストラクタ

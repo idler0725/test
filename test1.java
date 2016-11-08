@@ -50,7 +50,7 @@ class Reminder extends Calculation{
 		System.out.println("\b=" + reminder);
 	}
 }
-//ƒƒCƒ“ƒNƒ‰ƒX
+//MainClass
 public class test1 {
 	public static void main(String[] args) {
 		//‰Šú‰»

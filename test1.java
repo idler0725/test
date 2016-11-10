@@ -7,10 +7,10 @@ package study;
 
 //CalculationClass
 class Calculation{
-	int[] sequence;		//元となる数列
-	//コンストラクタ
+	int[] sequence;		
+	//Constructor
 	Calculation(int[] vals){
-		int i = 0;		//ループ用変数
+		int i = 0;		
 		sequence = new int[vals.length];
 		for(int val: vals){
 			sequence[i++] = val;
@@ -19,12 +19,12 @@ class Calculation{
 }
 //SumClass
 class Sum extends Calculation{
-	int sum = 0;		//和
-	//コンストラクタ
+	int sum = 0;		
+	//Constructor
 	Sum(int...vals){
 		super(vals);
 	}
-	//和を表示
+	//Disp Sum
 	public void viewSum(){
 		for(int val: sequence){
 			System.out.print(val + "+");
@@ -35,13 +35,13 @@ class Sum extends Calculation{
 }
 //ReminderClass
 class Reminder extends Calculation{
-	int reminder;		//差
-	//コンストラクタ
+	int reminder;		
+	//Constructor
 	Reminder(int...vals){
 		super(vals);
 		reminder = vals[0] * 2;
 	}
-	//差を表示
+	//Disp Reminder
 	public void viewReminder(){
 		for(int val: sequence){
 			System.out.print(val + "-");
@@ -53,12 +53,23 @@ class Reminder extends Calculation{
 //MainClass
 public class test1 {
 	public static void main(String[] args) {
-		//初期化
+		//Init
 		Sum sum = new Sum(1, 4, 6, 12);
 		Reminder reminder = new Reminder(5, 2, 9);
-		//和を表示
+		//Disp Sum
 		sum.viewSum();
-		//差を表示
+		//Disp Reminder
 		reminder.viewReminder();
 	}
 }
+
+//Add Exception Handling
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */

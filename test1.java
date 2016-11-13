@@ -1,75 +1,86 @@
 package study;
 
-/**
- * @author idler0725
- *
- */
-
 //CalculationClass
 class Calculation{
-	int[] sequence;		
-	//Constructor
-	Calculation(int[] vals){
-		int i = 0;		
-		sequence = new int[vals.length];
-		for(int val: vals){
-			sequence[i++] = val;
-		}
+	int base, action;	
+	//Constructor(No Argument)
+	Calculation(){
+		base = 0;
+		action = 0;
+	}
+	//Constructor(Have Argument)
+	Calculation(int input1, int input2){
+		base = input1;
+		action = input2;
 	}
 }
-//SumClass
-class Sum extends Calculation{
-	int sum = 0;		
-	//Constructor
-	Sum(int...vals){
-		super(vals);
+//AdditionClass
+class Addition extends Calculation{
+	//Constructor(No Argument)
+	Addition(){
+		super();
 	}
-	//Disp Sum
-	public void viewSum(){
-		for(int val: sequence){
-			System.out.print(val + "+");
-			sum += val;
-		}
-		System.out.println("\b=" + sum);
+	//Constructor(Have Argument)
+	Addition(int input1, int input2){
+		super(input1, input2);
+	}
+	//Display Sum
+	public void displaySum(){
+			System.out.println(base + "+" + action + "=" + (base + action));
 	}
 }
-//ReminderClass
-class Reminder extends Calculation{
-	int reminder;		
-	//Constructor
-	Reminder(int...vals){
-		super(vals);
-		reminder = vals[0] * 2;
+//SubtractionClass
+class Subtraction extends Calculation{
+	//Constructor(No Argument)
+	Subtraction(){
+		super();
 	}
-	//Disp Reminder
-	public void viewReminder(){
-		for(int val: sequence){
-			System.out.print(val + "-");
-			reminder -= val;
+	//Constructor(Have Argument)
+	Subtraction(int input1, int input2){
+		super(input1, input2);
+	}
+	//Display Sum
+	public void displayDifference(){
+			System.out.println(base + "-" + action + "=" + (base - action));
+	}
+}
+//DivisionClass
+class Division extends Calculation{
+	int quotient = 0;
+	//Constructor(No Argument)
+	Division(){
+		super();
+	}
+	//Constructor(Have Argument)
+	Division(int input1, int input2){
+		super(input1, input2);
+	}
+	//Display Quotient
+	public void displayQuotient(){
+		//Exception Handle
+		try{
+			quotient = base / action;
+		}catch(ArithmeticException e){
+			//e.printStackTrace();
+			System.err.println(e.getMessage());
+		}finally{
+			System.out.println(base + "/" + action + "=" + quotient);
 		}
-		System.out.println("\b=" + reminder);
 	}
 }
 //MainClass
 public class test1 {
-	public static void main(String[] args) {
-		//Init
-		Sum sum = new Sum(1, 4, 6, 12);
-		Reminder reminder = new Reminder(5, 2, 9);
-		//Disp Sum
-		sum.viewSum();
-		//Disp Reminder
-		reminder.viewReminder();
+	public static void main(String[] args) {		
+		//Addition
+		Addition addition = new Addition(1, 4);
+		addition.displaySum();
+		
+		//Subtraction
+		Subtraction subtraction = new Subtraction(5, 2);
+		subtraction.displayDifference();
+		
+		//Division
+		Division division = new Division(4, 0);
+		division.displayQuotient();
 	}
 }
-
-//Add Exception Handling
-/*
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- */
